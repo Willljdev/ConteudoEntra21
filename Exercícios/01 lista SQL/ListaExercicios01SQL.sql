@@ -291,3 +291,17 @@ UPDATE enderecos SET complemento = 'Fundos'
 SELECT id, estado, cidade, bairro, cep, logradouro, numero, complemento
 	FROM enderecos;
 
+-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3
+-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3-- EXERCÍCIO NÚMERO 3
+
+CREATE TABLE champions(
+	id INTEGER PRIMARY KEY IDENTITY(1,1),
+	nome VARCHAR (10),
+	descricao VARCHAR (30),
+	habilidade1 VARCHAR (50),
+	habilidade2 VARCHAR (50),
+	habilidade3 VARCHAR (50),
+	habilidade4 VARCHAR (50),
+	habilidade5 VARCHAR (50)
+	);
+

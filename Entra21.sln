@@ -67,6 +67,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CFAE3284-9D68-4E8C-8787-8750F5083F1F}"
 	ProjectSection(SolutionItems) = preProject
 		Exercícios\01 lista SQL\ExemplosSQLComandosBasicos.sql = Exercícios\01 lista SQL\ExemplosSQLComandosBasicos.sql
+		Exercícios\02 lista SQL\Lista02ExercicioSQL.sql = Exercícios\02 lista SQL\Lista02ExercicioSQL.sql
 		Exercícios\01 lista SQL\ListaExercicios01SQL.sql = Exercícios\01 lista SQL\ListaExercicios01SQL.sql
 	EndProjectSection
 EndProject

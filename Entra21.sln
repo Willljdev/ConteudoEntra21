@@ -64,6 +64,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entra21.ExemplosWindowsForm
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Lista SQL", "01 Lista SQL", "{30BE00E9-FC11-4EEC-B9B1-F5F6B9ACB9AD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CFAE3284-9D68-4E8C-8787-8750F5083F1F}"
+	ProjectSection(SolutionItems) = preProject
+		Exercícios\01 lista SQL\ExemplosSQLComandosBasicos.sql = Exercícios\01 lista SQL\ExemplosSQLComandosBasicos.sql
+		Exercícios\01 lista SQL\ListaExercicios01SQL.sql = Exercícios\01 lista SQL\ListaExercicios01SQL.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

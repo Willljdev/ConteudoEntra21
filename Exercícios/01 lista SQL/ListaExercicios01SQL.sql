@@ -305,3 +305,101 @@ CREATE TABLE champions(
 	habilidade5 VARCHAR (50)
 	);
 
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES	('Katarina', 'A lâmina sinistra', 'Voracidade', 'Lãmina saltitante', 'Preparação', 'Shunpo', 'Lótus da morte');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Yasuo', '', 'Estilo do errante', 'Tempestade de aço', 'Parede de vento', 'Espada ágil', 'Último suspiro');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES ('Master Yi', 'O espadachim Wuju', 'Ataque duplo', '', '', '', '');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Vayne', 'A caçadora noturna', 'Caçadora Noturna', 'Rolamento', 'Dardos de prata', 'Condenar', 'Hora final');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Lee Sin', 'O monge cego', 'Agitação', 'Onda sônica / Ataque ressosante', 'Proteger / Vontade de ferro', 'Tempestade / Mutilar', '');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM	champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Vi', 'A defensora de Piltover', 'Blindagem', '', 'Pancada Certeira', 'Força Execessiva', 'Saque e Enterrada');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Diana', 'O escárnio da lua', 'Espada de prata lunar', 'Golpe Crescente', 'Cascata Livida', 'Colapso Minguante', 'Zênite Lunar');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Annie', 'A criança sombria', 'Piromania', 'Desintegrar', 'Incinerar', 'Escudo fundido', 'Invocar Tibbers');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+INSERT INTO champions
+	(nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5)
+	VALUES('Aatrox', '', 'Poço de sangue', 'Voo sombrio', 'Sede de sangue / Preço em Sangue', 'Lâminas de aflição', 'Massacre');
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+UPDATE champions SET descricao = 'O imperdoável'
+	WHERE id = 2;
+
+UPDATE champions SET habilidade2 = 'Ataque alfa'
+	WHERE id = 3;
+
+UPDATE champions SET habilidade3 = 'Meditar'
+	WHERE id = 3;
+
+UPDATE champions SET habilidade4 = 'Estilo Wuju'
+	WHERE id = 3;
+
+UPDATE champions SET habilidade5 = 'Highlander'
+	WHERE id = 3;
+
+UPDATE champions SET habilidade5 = 'Fúria do dragão'
+	WHERE id = 5;
+
+UPDATE champions SET habilidade2 = 'Quebra cofres'
+	WHERE id = 6;
+
+UPDATE champions SET descricao = 'A espada darkin'
+	WHERE id = 9;
+
+SELECT id, nome, descricao, habilidade1, habilidade2, habilidade3, habilidade4, habilidade5
+	FROM champions;
+
+SELECT id AS 'ID',
+	   descricao AS 'Descrição',
+	   habilidade1 AS 'Habilidade 1',
+	   habilidade2 AS 'Habilidade 2',
+	   habilidade3 AS 'Habilidade 3',
+	   habilidade4 AS 'Habilidade 4',
+	   habilidade5 AS 'Habilidade 5'
+	   FROM champions;

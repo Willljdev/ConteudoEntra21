@@ -2781,6 +2781,58 @@ SELECT nome, nota_1, nota_2, nota_3, nota_4
 	WHERE nome = (SELECT MAX(a.nome)
 	FROM alunos a);
 
+--EXERCICIO 09 TABELA ALUNOS------------------------------------------------------------
+--Selecione a cor e quantidade com a cor Gelo.
+ALTER TABLE alunos ADD qtd_cor_gelo INT;
+
+SELECT qtd_cor_gelo = COUNT (cor_preferida)
+FROM alunos
+WHERE cor_preferida = 'gelo';
+
+--EXERCICIO 10 TABELA ALUNOS------------------------------------------------------------
+--Selecione a quantidade de alunos que o nome contém Francisco no começo.
+
+ALTER TABLE alunos ADD qtd_francisco_nome_começo INT;
+
+SELECT qtd_francisco_nome_começo = COUNT(nome)
+	FROM alunos
+	WHERE nome LIKE 'Francisco%';
+
+--EXERCICIO 11 TABELA ALUNOS------------------------------------------------------------
+--Selecione a quantidade de alunos que o nome contém Luc
+ALTER TABLE alunos ADD qtd_nomes_contem_luc INT;
+
+SELECT qtd_nomes_contem_luc = COUNT(nome)
+	FROM alunos
+	WHERE nome LIKE '%luc%';
+
+--EXERCICIO 12 TABELA ALUNOS------------------------------------------------------------
+--Selecione o nome, signo e data de nascimento quando o signo Áries
+
+SELECT nome, signo, data_nascimento
+	FROM alunos
+	WHERE signo = 'Áries';
+
+--EXERCICIO 13 TABELA ALUNOS------------------------------------------------------------
+--Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o maior média.
+UPDATE alunos SET media = (nota_1+nota_2+nota_3+nota_4)/4;
+
+SELECT nome, nota_1, nota_2, nota_3, nota_4, media
+	FROM alunos
+	WHERE media = (SELECT MAX(a.media)
+	FROM alunos a);
+
+--EXERCICIO 14 TABELA ALUNOS------------------------------------------------------------
+-- Selecione o nome, média e caso a média for menor que 5 apresentar reprovado, 
+-- caso for menor que 7apresentar em exame senão apresentar aprovado.
+-- Dica: buscar como fazer IF em sql.
+
+	
+
+
+
+	
+
 
 
 

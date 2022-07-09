@@ -2831,6 +2831,30 @@ SELECT nome, nota_1, nota_2, nota_3, nota_4, media
 
 
 
+
+
+
+--EXERCICIO 15 TABELA ALUNOS-------------------------------------------------------------
+-- Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o menor média.
+
+SELECT nome, nota_1, nota_2, nota_3, nota_4, media
+	FROM alunos
+	WHERE media = (SELECT MIN(a.media)
+	FROM alunos a);
+
+
+--EXERCICIO 15 TABELA ALUNOS-------------------------------------------------------------
+--Selecione a quantidade de alunos em que a média foi maior que 7
+
+
+
+
+
+
+
+
+
+
 	
 
 

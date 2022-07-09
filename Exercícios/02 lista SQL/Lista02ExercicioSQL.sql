@@ -2727,6 +2727,63 @@ VALUES
 SELECT id, nome, cpf, nick, signo, numero_favorito, nota_1, nota_2, nota_3, nota_4, cor_preferida, data_nascimento
 	FROM alunos;
 
+--EXERCICIO 02 TABELA ALUNOS------------------------------------------------------------
+--Selecione o nome dos alunos que a nota 1 é maior que 9.0.
+
+SELECT nome, nota_1
+	FROM alunos
+	WHERE  nota_1 > 9.0;
+
+--EXERCICIO 03 TABELA ALUNOS------------------------------------------------------------
+--Selecione o nome do aluno, nota 1, nota 2, nota 3, nota 4, e a média.
+ALTER TABLE alunos ADD media FLOAT;
+
+SELECT nome, nota_1, nota_2, nota_3, nota_4, media = (nota_1 + nota_2 + nota_3 + nota_4)/4
+	FROM alunos;
+
+--EXERCICIO 04 TABELA ALUNOS------------------------------------------------------------
+--Contabilize a quantidade de alunos com o signo de Peixes
+
+ALTER TABLE alunos ADD qtd_sig_peixes INT;
+SELECT qtd_sig_peixes = COUNT (nome)
+FROM alunos
+WHERE signo = 'peixes';
+
+--EXERCICIO 05 TABELA ALUNOS------------------------------------------------------------
+--Selecione a soma da nota 1
+
+ALTER TABLE alunos ADD soma_nota_1 FLOAT;
+
+SELECT soma_nota_1 = SUM (nota_1)
+	FROM alunos;
+
+--EXERCICIO 06 TABELA ALUNOS------------------------------------------------------------
+--Selecione a média da nota 2
+
+ALTER TABLE alunos ADD media_nota_2 FLOAT;
+
+SELECT media_nota_2 = AVG (nota_2)
+	FROM alunos;
+
+--EXERCICIO 07 TABELA ALUNOS------------------------------------------------------------
+-- Selecione o nome, menor nota 1.
+
+SELECT nome, nota_1 
+	FROM alunos
+	WHERE nota_1 = (SELECT MIN(a.nota_1)
+	FROM alunos a);
+
+--EXERCICIO 08 TABELA ALUNOS------------------------------------------------------------
+--Selecione o nome, nota 1, nota 2, nota 3, nota 4 com o maior nome.
+
+SELECT nome, nota_1, nota_2, nota_3, nota_4
+	FROM alunos
+	WHERE nome = (SELECT MAX(a.nome)
+	FROM alunos a);
+
+
+
+
 
 
 

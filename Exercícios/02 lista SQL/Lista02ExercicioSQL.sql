@@ -14,6 +14,9 @@ CREATE TABLE alunos (
 	data_nascimento DATETIME2
 );
 
+SELECT nome, cpf, nick, signo, numero_favorito, nota_1, nota_2, nota_3, nota_4, cor_preferida, data_nascimento
+	FROM alunos;
+
 INSERT INTO alunos (nome, cpf, nick, signo, numero_favorito, nota_1, nota_2, nota_3, nota_4, cor_preferida, data_nascimento)
 VALUES
 ('Pascoal Negromonte', '362.097.297-46', 'Noleos', 'Touro', '518', '6.92', '9.62', '5.11', '6.18', 'Marrom-claro', '1974-05-08'), 
@@ -2843,12 +2846,61 @@ SELECT nome, nota_1, nota_2, nota_3, nota_4, media
 	FROM alunos a);
 
 
---EXERCICIO 15 TABELA ALUNOS-------------------------------------------------------------
+--EXERCICIO 16 TABELA ALUNOS-------------------------------------------------------------
 --Selecione a quantidade de alunos em que a média foi maior que 7
 
+ALTER TABLE alunos ADD qtd_alunos_media_acima7 INT;
+SELECT qtd_alunos_media_acima7 = COUNT(nome)
+	FROM alunos
+	WHERE media < 7;
 
+--EXERCICIO 17 TABELA ALUNOS-------------------------------------------------------------
+--Selecione o nome, nick do aluno que o nick contém 5 caracteres.
 
+SELECT nome, nick
+	FROM alunos
+	WHERE LEN(nick) = 5;
 
+--EXERCICIO 18 TABELA ALUNOS-------------------------------------------------------------
+--Selecione o nome do aluno quando a cor for ouro ou amarelo-torrado e a média for 
+--maior que seis e meio.
+
+SELECT nome
+	FROM alunos
+	WHERE cor_preferida = 'ouro' OR cor_preferida = 'amarelo-torrado' 
+	AND media > 6.5;
+
+--EXERCICIO 19 TABELA ALUNOS-------------------------------------------------------------
+--Selecione o nome e o ano da data de nascimento.
+
+SELECT nome, FORMAT (data_nascimento, 'yyyy') AS 'Ano de nascimento'
+	FROM alunos; 
+
+--EXERCICIO 20 TABELA ALUNOS-------------------------------------------------------------
+--Selecione o nick e o mês de nascimento quando o mês de nascimento for maior que 6.
+ALTER TABLE alunos ADD mes_nascimento DATETIME2;
+
+SELECT nick, mes_nascimento = FORMAT(data_nascimento, 'MM') 
+	FROM alunos
+	WHERE mes_nascimento <06; --NÃO FUNCIONA
+
+--EXERCICIO 21 TABELA ALUNOS-------------------------------------------------------------
+--Selecione a quantidade de pessoas que nasceram no ano de 1996
+ALTER TABLE alunos ADD ano_nascimento DATETIME2;
+SELECT ano_nascimento = FORMAT(data_nascimento, 'yyyy')
+	FROM alunos
+	WHERE ano_nascimento = 1996; --NÃO FUNCIONA
+
+--EXERCICIO 22 TABELA ALUNOS-------------------------------------------------------------
+--Selecione a quantidade de pessoas de pessoas que nasceram no dia dois do mês de 
+--fevereiro do ano 1964 ou 1994.
+
+SELECT COUNT(data_nascimento)
+	FROM alunos
+	WHERE data_nascimento = 02-02-1964;--NÃO FUNCIONA
+
+--EXERCICIO 23 TABELA ALUNOS-------------------------------------------------------------
+--Selecione o nick e a nota 4 do aluno que a nota 2 está entre 5.0 e 5.99
 
 
 

@@ -59,7 +59,7 @@ INSERT INTO pecas(nome, tipo, preco_unitario)
 INSERT INTO clientes(nome, cpf)
 	VALUES 
 	('Claudio', '070.355.489-73'),
-	('Cry', '032.599.984-69');
+	('Crys', '032.599.984-69');
 
 INSERT INTO enderecos
 	(id_cliente, estado, cidade, bairro, cep, logradouro, numero)
@@ -84,3 +84,34 @@ SELECT
 	e.numero) AS 'Endereço completo'
 	FROM clientes AS c
 	INNER JOIN enderecos AS e ON (e.id_cliente = c.id);
+--Consultar os endereços apresentando seu cliente filtrando por bairros com nome 'velha'
+--Consultar partindo da tabela de endereços com outra consulta na tabela de clientes 
+SELECT 
+	c.nome, 
+	e.bairro,
+	e.logradouro
+	FROM enderecos AS e
+	INNER JOIN clientes AS c ON(c.id = e.id_cliente)
+	WHERE e.bairro LIKE '%Velha%';
+
+INSERT INTO pedidos (id_cliente, status, data_criacao)
+	VALUES
+	(1, 0, GETDATE()), -- pedido para o caludio
+	((SELECT id FROM clientes WHERE nome= 'Crys'), 0, GETDATE()); --Pedido para o Cry
+
+
+--Consultar pedidos listando data da criação formato PTBR,, status com texto
+--e nome do cliente 
+--Consulta partindo da tabela de pedidos com join em clientes
+SELECT
+	FORMAT(p.data_criacao, 'dd/MM/yyyy'),
+	CASE 
+		WHEN [status] = 0 THEN 'Carrinho'
+		WHEN [status] = 1 THEN 'Aguardando pagamento'
+		WHEN [status] = 2 THEN 'Pagamento efetivado'
+		ELSE 'Entrega realizada'
+	END AS 'Status pedido',
+	c.nome 
+	FROM pedidos AS p 
+	INNER JOIN clientes AS c ON(p.id_cliente = c.id);
+UPDATE pedidos SET status = 1 WHERE id = 2;

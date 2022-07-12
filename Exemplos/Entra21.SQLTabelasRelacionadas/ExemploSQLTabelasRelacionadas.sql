@@ -3,11 +3,13 @@
 	nome VARCHAR(50),
 	tipo INTEGER,
 	preco_unitario DECIMAL(6,2));
+--DROP TABLE pecas;
 
 CREATE TABLE clientes(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
 	nome VARCHAR(40),
 	cpf VARCHAR(14));
+--DROP TABLE clientes;
 
 CREATE TABLE enderecos(
 	id INTEGER PRIMARY KEY IDENTITY(1,1), --PK
@@ -22,7 +24,8 @@ CREATE TABLE enderecos(
 
 	--FOREIGN KEY nome_coluna_tabela_atual REFERENCES nome_tabela_pai(nome_coluna_pai_pk)
 	FOREIGN KEY(id_cliente) REFERENCES clientes(id));
-	
+--DROP TABLE enderecos;
+
 CREATE TABLE pedidos(
 	id INTEGER PRIMARY KEY IDENTITY(1,1),
 	id_cliente INTEGER NOT NULL,
@@ -30,6 +33,7 @@ CREATE TABLE pedidos(
 	data_efetivacao_compra DATETIME2,
 	data_criacao DATETIME2 NOT NULL
 );
+--DROP TABLE pedidos;
 
 CREATE TABLE pedidos_pecas(
 	id INTEGER PRIMARY KEY IDENTITY(1,1), --PK
@@ -39,4 +43,44 @@ CREATE TABLE pedidos_pecas(
 	quantidade SMALLINT,
 
 	FOREIGN KEY (id_pedido) REFERENCES pedidos(id),
-	FOREIGN KEY(
+	FOREIGN KEY(id_peca) REFERENCES pecas(id)
+);
+--DROP TABLE pedidos_pecas;
+
+INSERT INTO pecas(nome, tipo, preco_unitario)
+	VALUES 
+	('SSD 240 GB', 1, 200),
+	('SSD 240 M2', 1, 420.39),
+	('RTX 3090 TI', 2, 9999.90),
+	('GTX 1060', 2, 1500),
+	('16GB DDR5 4800Ghz', 5, 800),
+	('16GB DDR4 3200Ghz', 5, 350);
+
+INSERT INTO clientes(nome, cpf)
+	VALUES 
+	('Claudio', '070.355.489-73'),
+	('Cry', '032.599.984-69');
+
+INSERT INTO enderecos
+	(id_cliente, estado, cidade, bairro, cep, logradouro, numero)
+		VALUES
+	(1, 'SC', 'Blumenau', 'Velha', '89070-301', 'Rua Divinopolis', 777),
+	(2, 'SC', 'Blumenau', 'Velha Grande', '89070-472', 'Morro da Edith', 36),
+	(3, 'SC', 'Blumenau', 'Judity', 'Sem cep', 'Rua da Kellen', 23);
+
+SELECT * FROM pecas;
+SELECT * FROM clientes;
+SELECT * FROM enderecos;
+
+--Consulta para listar o nome, cpf, e endereço completo do cliente
+--Consulta parte da tabela de clientes fazendo INNer join com a tabela de endereço
+SELECT 
+	c.nome,
+	c.cpf,
+	CONCAT(e.estado, '-',
+	e.cidade, '-',
+	e.bairro, '-',
+	e.logradouro, '-',
+	e.numero) AS 'Endereço completo'
+	FROM clientes AS c
+	INNER JOIN enderecos AS e ON (e.id_cliente = c.id);

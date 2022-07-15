@@ -81,6 +81,7 @@
             this.Name = "TipoPersonagemCadastroEdicaoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TipoPersonagemCadastroEdicaoForm";
+            this.Load += new System.EventHandler(this.TipoPersonagemCadastroEdicaoForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

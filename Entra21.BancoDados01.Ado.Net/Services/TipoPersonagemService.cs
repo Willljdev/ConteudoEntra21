@@ -14,6 +14,24 @@ namespace Entra21.BancoDados01.Ado.Net.Services
     //será obrigada a implementar os métodos (contratos) estabelecidos na interface
     internal class TipoPersonagemService : ITipoPersonagemService
     {
+        public void Apagar(int id)
+        {
+            //conectar com o Banco de dados
+            var conexao = new Conexao().Conectar();
+
+            //criar comando para executar o delete
+            var comando = conexao.CreateCommand();
+
+            //Definido o comando para apagar o registro
+            comando.CommandText = "DELETE FROM tipos_personagens WHERE id = " + id;
+
+            //Executando o comando para pagar o registro
+            comando.ExecuteNonQuery();
+
+            //Fechar conexão com o bd
+            comando.Connection.Close();
+        }
+
         public void Cadastrar(TipoPersonagem tipoPersonagem)
         {
             var conexao = new Conexao().Conectar();

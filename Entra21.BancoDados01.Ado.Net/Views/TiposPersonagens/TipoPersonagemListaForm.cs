@@ -71,5 +71,16 @@ namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
             }
 
         }
+
+        private void buttonApagar_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+
+            tipoPersonagemService.Apagar(id);
+
+            AtualizarRegistrosDataGridView();
+
+            MessageBox.Show("Registro apagado com sucesso");
+        }
     }
 }

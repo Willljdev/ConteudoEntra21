@@ -43,10 +43,26 @@ namespace Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens
             //persistir o registro
             var tipoPersonagemService = new TipoPersonagemService();
 
-            //Persistir a informação na tabela de tipos_personagens
-            tipoPersonagemService.Cadastrar(tipoPersonagem);
+            //Verifica se está em modo de cadastro
+            if (idEdicao == -1)
+            {
+                //Persistir a informação na tabela de tipos_personagens
+                tipoPersonagemService.Cadastrar(tipoPersonagem);
 
-            MessageBox.Show("Tipo de personagem cadastrado com sucesso");
+                MessageBox.Show("Tipo de personagem cadastrado com sucesso");
+
+                Close();
+
+                return;
+            }
+
+            tipoPersonagem.Id = idEdicao;
+            //Atualizar a informação na tabela de tipos_persinagens
+            tipoPersonagemService.Editar(tipoPersonagem);
+
+            MessageBox.Show("Tipo de personagem alterado com sucesso!!");
+
+            Close();
         }
 
         private void TipoPersonagemCadastroEdicaoForm_Load(object sender, EventArgs e)

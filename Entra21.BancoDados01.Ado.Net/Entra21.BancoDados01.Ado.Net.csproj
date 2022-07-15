@@ -48,10 +48,15 @@
   <ItemGroup>
     <Compile Include="DataBase1\Conexao.cs" />
     <Compile Include="Models\Editora.cs" />
+    <Compile Include="Models\Personagem.cs" />
     <Compile Include="Models\TipoPersonagem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EditoraService.cs" />
+    <Compile Include="Services\IEditoraService.cs" />
+    <Compile Include="Services\IPersonagemService.cs" />
     <Compile Include="Services\ITipoPersonagemService.cs" />
+    <Compile Include="Services\PersonagemService.cs" />
     <Compile Include="Services\TipoPersonagemService.cs" />
     <Compile Include="Views\TiposPersonagens\TipoPersonagemCadastroEdicaoForm.cs">
       <SubType>Form</SubType>

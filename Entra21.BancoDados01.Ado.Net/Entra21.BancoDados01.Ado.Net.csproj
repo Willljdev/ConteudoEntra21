@@ -58,6 +58,18 @@
     <Compile Include="Services\ITipoPersonagemService.cs" />
     <Compile Include="Services\PersonagemService.cs" />
     <Compile Include="Services\TipoPersonagemService.cs" />
+    <Compile Include="Views\Personagens\PersonagemCadastroEdicaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Personagens\PersonagemCadastroEdicaoForm.Designer.cs">
+      <DependentUpon>PersonagemCadastroEdicaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Personagens\PersonagemListagemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Personagens\PersonagemListagemForm.Designer.cs">
+      <DependentUpon>PersonagemListagemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\TiposPersonagens\TipoPersonagemCadastroEdicaoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Personagens\PersonagemCadastroEdicaoForm.resx">
+      <DependentUpon>PersonagemCadastroEdicaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Personagens\PersonagemListagemForm.resx">
+      <DependentUpon>PersonagemListagemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\TiposPersonagens\TipoPersonagemCadastroEdicaoForm.resx">
       <DependentUpon>TipoPersonagemCadastroEdicaoForm.cs</DependentUpon>
     </EmbeddedResource>

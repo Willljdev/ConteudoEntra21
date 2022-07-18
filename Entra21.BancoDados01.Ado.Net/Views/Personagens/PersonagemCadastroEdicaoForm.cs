@@ -14,11 +14,40 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 {
     public partial class PersonagemCadastroEdicaoForm : Form
     {
+        private readonly int _idParaEditar;
         public PersonagemCadastroEdicaoForm()
         {
             InitializeComponent();
             PreencherComboBoxTipoPersonagem();
             PreencherComboBoxEditora();
+        }
+
+        public PersonagemCadastroEdicaoForm(Personagem personagem) : this()
+        {
+            _idParaEditar = personagem.Id;
+            textBoxNome.Text = personagem.Nome;
+
+            //Percorrer cada um dos itens do tipo personagem, para selecionar o que o usuário tinha cadastrado anteriormente
+            for (int i = 0; i < comboBoxTipoPersonagem.Items.Count; i++)
+            {
+                var tipoPersonagemPercorrido = comboBoxTipoPersonagem.Items[i] as TipoPersonagem;
+
+                if(tipoPersonagemPercorrido.Id == personagem.TipoPersonagem.Id)
+                {
+                    comboBoxTipoPersonagem.SelectedItem = tipoPersonagemPercorrido;
+                    break;
+                }
+            }
+            //Percorrer cada um dos itens da editora, para selecionar o que o usuario tinha cadastrado
+            for (int i = 0; i < comboBoxEditora.Items.Count;i++)
+            {
+                var editoraPercorrida = comboBoxEditora.Items[i] as Editora;
+
+                if (editoraPercorrida.Id == personagem.Editora.Id)
+                {
+                    comboBoxEditora.SelectedItem = editoraPercorrida;
+                }
+            }
         }
 
         private void PreencherComboBoxEditora()

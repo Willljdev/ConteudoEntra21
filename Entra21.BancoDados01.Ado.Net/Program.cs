@@ -1,4 +1,5 @@
-﻿using Entra21.BancoDados01.Ado.Net.Views.Personagens;
+﻿using Entra21.BancoDados01.Ado.Net.Views;
+using Entra21.BancoDados01.Ado.Net.Views.Personagens;
 using Entra21.BancoDados01.Ado.Net.Views.TiposPersonagens;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Entra21.BancoDados01.Ado.Net
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PersonagemCadastroEdicaoForm());
+            Application.Run(new MenuPrincipalForm());
         }
     }
 }

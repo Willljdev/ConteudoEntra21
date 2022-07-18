@@ -47,6 +47,7 @@
             this.buttonCadastrar.TabIndex = 0;
             this.buttonCadastrar.Text = "Cadastrar";
             this.buttonCadastrar.UseVisualStyleBackColor = true;
+            this.buttonCadastrar.Click += new System.EventHandler(this.buttonCadastrar_Click);
             // 
             // buttonApagar
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.buttonCadastrar);
             this.Name = "PersonagemListagemForm";
             this.Text = "PersonagemListagemForm";
+            this.Load += new System.EventHandler(this.PersonagemListagemForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

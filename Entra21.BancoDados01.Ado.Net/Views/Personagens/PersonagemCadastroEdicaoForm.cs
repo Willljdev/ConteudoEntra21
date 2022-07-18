@@ -18,6 +18,20 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
         {
             InitializeComponent();
             PreencherComboBoxTipoPersonagem();
+            PreencherComboBoxEditora();
+        }
+
+        private void PreencherComboBoxEditora()
+        {
+            //Buscar todas as editoras do banco de dados para permitir o usuário escolher
+            var editoraService = new EditoraService();
+            var editoras = editoraService.ObterTodos();
+
+            for (int i = 0; i < editoras.Count; i++)
+            {
+                var editora = editoras[i];
+                comboBoxEditora.Items.Add(editora);
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -62,6 +76,16 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
                 var tipoPersonagem = tipoPersonagens[i];
                 comboBoxTipoPersonagem.Items.Add(tipoPersonagem);
             }
+        }
+
+        private void PersonagemCadastroEdicaoForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

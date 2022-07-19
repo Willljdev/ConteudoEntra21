@@ -98,6 +98,8 @@ namespace Entra21.BancoDados01.Ado.Net.Views.Personagens
 
             var personagemCadastroForm = new PersonagemCadastroEdicaoForm(personagem);
             personagemCadastroForm.ShowDialog();
+
+            PreencherDataGridViewComPersonagens();
         }
     }
 }

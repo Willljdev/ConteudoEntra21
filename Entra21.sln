@@ -76,6 +76,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.BancoDados01.Ado.Ne
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{AD63D98E-D0AE-4315-BE57-30D6AB73DDF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entra21.BancoDados02.Ado.Net.Exercicio.Form", "Entra21.BancoDados02.Ado.Net.Exercicio.Form\Entra21.BancoDados02.Ado.Net.Exercicio.Form.csproj", "{1750C76F-527D-44A3-B2A6-1C064F95CC7A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,6 +262,14 @@ Global
 		{3B49E9B5-CC32-4042-8966-C224F7CC1A7C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B49E9B5-CC32-4042-8966-C224F7CC1A7C}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B49E9B5-CC32-4042-8966-C224F7CC1A7C}.Release|x86.Build.0 = Release|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Debug|x86.Build.0 = Debug|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Release|x86.ActiveCfg = Release|Any CPU
+		{1750C76F-527D-44A3-B2A6-1C064F95CC7A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
